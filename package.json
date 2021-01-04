@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "android": "npx react-native run-android",
+    "android-clean": "yarn && npx jetify && cd android && ./gradlew clean && cd .. && npx react-native run-android && yarn start --reset-cache",
+    "ios": "npx react-native run-ios",
+    "ios-clean": "yarn && cd ios && pod deintegrate && pod install && cd .. && npx react-native run-ios",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
